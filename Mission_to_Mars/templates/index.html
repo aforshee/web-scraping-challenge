@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 class="jumbotron">Mission to Mars</h1>
+    <a class='btn btn-primary' href='/scrape'>
+      Scrape
+    </a>
+    <div>
+      <ul style="list-style: none;">
+        <!--
+            Django (web framework / template engine) `for` reference:
+            https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#for
+          -->
+        <!--<pre>{{news_titles|tojson}}</pre>-->
+        {% for title in news_titles %}
+        <li>{{ title }}</li>
+        {% endfor %}
+
+        {% for tweet in twitter_info %}
+        <li> {{ tweet }}</li>
+        {% endfor %}
+
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
